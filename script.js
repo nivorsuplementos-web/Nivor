@@ -3,7 +3,7 @@
 // ===============================
 // Troque pelo número do WhatsApp da loja.
 // Formato: 55 + DDD + número, sem espaços, sem + e sem parênteses.
-const WHATSAPP = "5592999999999";
+const WHATSAPP = "5592994652632";
 
 const products = [
   { id: 1, name: "Whey Protein 900g", category: "Whey", price: 129.90, badge: "DESTAQUE" },
