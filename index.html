@@ -1,115 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nivor Suplementos — suplementos para acompanhar sua evolução.">
-  <title>Nivor | Suplementos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a1d">
+  <title>Nivor Suplementos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="logo" href="#inicio">NIVOR<span>.</span></a>
-      <nav>
-        <a href="#inicio">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">🛒 <span id="cartCount">0</span></button>
+<header class="header">
+  <div class="brand">
+    <img src="logo-nivor.png" alt="Nivor Suplementos" class="logo">
+    <div>
+      <strong>NIVOR</strong>
+      <span>SUPLEMENTOS</span>
     </div>
-  </header>
+  </div>
+  <a class="cart-link" href="#catalogo">Catálogo</a>
+</header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">NIVOR SUPLEMENTOS</p>
-          <h1>Sua evolução.<br><span>Seu ritmo.</span></h1>
-          <p class="hero-text">Suplementos selecionados para acompanhar sua rotina de treino e seus objetivos.</p>
-          <a class="btn primary" href="#produtos">Ver produtos</a>
-        </div>
-        <div class="hero-card">
-          <div class="hero-circle">N</div>
-          <p>FOCO • FORÇA • CONSTÂNCIA</p>
-        </div>
-      </div>
-    </section>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">NIVOR SUPLEMENTOS</p>
+    <h1>Mais performance.<br><span>Todos os dias.</span></h1>
+    <p>Escolha o produto, consulte a disponibilidade e peça pelo WhatsApp.</p>
+    <a href="#catalogo" class="btn">Ver catálogo</a>
+  </div>
+</section>
 
-    <section class="benefits">
-      <div class="container benefits-grid">
-        <div><b>✓ Produtos selecionados</b><small>Qualidade e confiança</small></div>
-        <div><b>⚡ Atendimento rápido</b><small>Fale direto com a Nivor</small></div>
-        <div><b>🔒 Compra simples</b><small>Pedido pelo WhatsApp</small></div>
-      </div>
-    </section>
-
-    <section class="products-section" id="produtos">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">CATÁLOGO</p>
-            <h2>Encontre seu suplemento</h2>
-          </div>
-          <input id="search" type="search" placeholder="Buscar produto..." aria-label="Buscar produto">
-        </div>
-
-        <div class="filters" id="filters">
-          <button class="filter active" data-category="Todos">Todos</button>
-          <button class="filter" data-category="Whey">Whey</button>
-          <button class="filter" data-category="Creatina">Creatina</button>
-          <button class="filter" data-category="Pré-treino">Pré-treino</button>
-          <button class="filter" data-category="Vitaminas">Vitaminas</button>
-        </div>
-
-        <div class="products" id="products"></div>
-      </div>
-    </section>
-
-    <section class="about" id="sobre">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow">SOBRE A NIVOR</p>
-          <h2>Feita para quem leva sua evolução a sério.</h2>
-        </div>
-        <p>A Nivor nasceu com uma proposta simples: facilitar o acesso a suplementos e tornar sua rotina de evolução mais prática. Este espaço é o começo da marca — novos produtos e categorias podem entrar conforme a loja crescer.</p>
-      </div>
-    </section>
-
-    <section class="contact" id="contato">
-      <div class="container contact-box">
-        <div>
-          <p class="eyebrow">PRECISA DE AJUDA?</p>
-          <h2>Fale com a Nivor.</h2>
-          <p>Chame no WhatsApp para tirar dúvidas, consultar disponibilidade ou finalizar seu pedido.</p>
-        </div>
-        <a class="btn primary" id="whatsappContact" href="#" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer">
-      <div><a class="logo" href="#inicio">NIVOR<span>.</span></a><p>Suplementos para sua evolução.</p></div>
-      <p>© <span id="year"></span> Nivor. Todos os direitos reservados.</p>
+<main id="catalogo" class="container">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">CATÁLOGO</p>
+      <h2>Encontre seu suplemento</h2>
     </div>
-  </footer>
+    <input id="search" type="search" placeholder="Buscar produto...">
+  </div>
 
-  <div class="overlay" id="overlay"></div>
-  <aside class="cart" id="cart" aria-label="Carrinho">
-    <div class="cart-head">
-      <h2>Seu carrinho</h2>
-      <button id="closeCart" aria-label="Fechar carrinho">✕</button>
-    </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-bottom">
-      <div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
-      <button class="btn primary full" id="checkout">Pedir pelo WhatsApp</button>
-      <button class="btn ghost full" id="clearCart">Limpar carrinho</button>
-    </div>
-  </aside>
+  <div class="filters" id="filters">
+    <button class="active" data-category="Todos">Todos</button>
+    <button data-category="Proteínas">Proteínas</button>
+    <button data-category="Creatina">Creatina</button>
+    <button data-category="Performance">Performance</button>
+    <button data-category="Ganho de massa">Ganho de massa</button>
+    <button data-category="Vitaminas">Vitaminas</button>
+    <button data-category="Saúde">Saúde</button>
+  </div>
 
-  <script src="script.js"></script>
+  <div id="products" class="grid"></div>
+</main>
+
+<section class="how">
+  <div class="container">
+    <p class="eyebrow">COMO FUNCIONA</p>
+    <h2>Você pede. A Nivor consulta.</h2>
+    <div class="steps">
+      <div><b>01</b><h3>Escolha</h3><p>Selecione o produto que você procura.</p></div>
+      <div><b>02</b><h3>Consulte</h3><p>Enviamos seu pedido pelo WhatsApp.</p></div>
+      <div><b>03</b><h3>Confirme</h3><p>Confirmamos disponibilidade e valor final.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo-nivor.png" alt="" class="footer-logo">
+  <p>Nivor Suplementos — qualidade, energia e performance.</p>
+  <a href="https://wa.me/5592994652632" target="_blank" rel="noopener">Falar no WhatsApp</a>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

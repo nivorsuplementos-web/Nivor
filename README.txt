@@ -1,11 +1,11 @@
-# NIVOR — Site da loja
+NIVOR SUPLEMENTOS
+Site estático para GitHub Pages.
 
-## Como usar
-1. Abra o arquivo `index.html` no navegador para testar.
-2. Abra `script.js` e altere:
-   - `WHATSAPP` para o número real da loja.
-   - A lista `products` para colocar os produtos e preços reais.
-3. Para publicar gratuitamente, você pode usar GitHub Pages ou Netlify.
+Arquivos:
+- index.html
+- style.css
+- script.js
+- logo-nivor.png
 
-## Observação
-Os preços e produtos no código são apenas exemplos. Substitua pelos produtos reais da Nivor antes de publicar.
+O catálogo usa preços de referência. A venda é confirmada pelo WhatsApp após consulta de disponibilidade e valor final.
+WhatsApp: (92) 99465-2632
