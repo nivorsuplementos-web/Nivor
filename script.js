@@ -1,5 +1,22 @@
 const WHATSAPP = "5592994652632";
-const products = [("Whey 100% Max Titanium 900g", "Proteínas", "R$ 147,99"), ("Whey 3W Max Titanium 900g", "Proteínas", "R$ 179,99"), ("Whey Femini Max Titanium 900g", "Proteínas", "R$ 112,99"), ("Nutri Whey Integralmedica 900g", "Proteínas", "R$ 75,49"), ("Whey 3W Tasty Whey 900g", "Proteínas", "R$ 212,99"), ("Creatina Max Titanium 300g", "Creatina", "R$ 64,99"), ("Creatina Integralmedica 300g", "Creatina", "R$ 69,99"), ("Creatina Adaptogen 300g", "Creatina", "R$ 99,99"), ("Glutamina Black Skull 150g", "Performance", "R$ 34,99"), ("Pré-treino Black Skull B.O.P.E. 150g", "Performance", "R$ 42,99"), ("Pré-treino Dila Pump 318g", "Performance", "R$ 108,99"), ("Cafeína 60 cápsulas", "Performance", "R$ 29,90"), ("Beta-alanina 200g", "Performance", "R$ 59,90"), ("Citrulina 200g", "Performance", "R$ 69,90"), ("BCAA", "Performance", "R$ 49,90"), ("Hipercalórico 3kg", "Ganho de massa", "R$ 129,90"), ("Maltodextrina 1kg", "Ganho de massa", "R$ 34,90"), ("Palatinose 500g", "Ganho de massa", "R$ 54,90"), ("L-Carnitina", "Saúde", "R$ 59,90"), ("Termogênico 60 cápsulas", "Saúde", "R$ 79,90"), ("Multivitamínico", "Vitaminas", "R$ 49,90"), ("Ômega 3", "Saúde", "R$ 39,90"), ("Vitamina D3", "Vitaminas", "R$ 29,90"), ("Magnésio", "Vitaminas", "R$ 39,90"), ("Colágeno Hidrolisado", "Saúde", "R$ 49,90")].map(([name, category, price]) => ({name, category, price}));
+
+// Preços sugeridos para venda. Confirme estoque, custo final e frete antes de fechar cada pedido.
+const products = [
+  { name: "Creatina Max Titanium 300g", category: "Creatina", price: "R$ 59,90" },
+  { name: "Creatina Turbo Black Skull 300g", category: "Creatina", price: "R$ 54,90" },
+  { name: "Nutri Whey Integralmédica 1,2kg — Baunilha", category: "Proteínas", price: "R$ 99,90" },
+  { name: "Nutri Whey Integralmédica 1,2kg — Chocolate", category: "Proteínas", price: "R$ 99,90" },
+  { name: "Mega Whey Protein Iridium 900g — Chocolate", category: "Proteínas", price: "R$ 79,90" },
+  { name: "Mass Titanium Max Titanium 3kg — Baunilha", category: "Ganho de massa", price: "R$ 119,90" },
+  { name: "2Hot Max Titanium 200g", category: "Pré-treino", price: "R$ 79,90" },
+  { name: "Hydra Glutamina Iridium 300g", category: "Performance", price: "R$ 74,90" },
+  { name: "Cafeína BodyAction — 60 cápsulas", category: "Performance", price: "R$ 49,90" },
+  { name: "Poseidon Ômega 3 Iridium — 60 cápsulas", category: "Vitaminas e bem-estar", price: "R$ 79,90" },
+  { name: "Vitamina D3 Iridium", category: "Vitaminas e bem-estar", price: "R$ 29,90" },
+  { name: "Colágeno Max Titanium Tangerina 120g", category: "Vitaminas e bem-estar", price: "R$ 49,90" },
+  { name: "BCAA Integralmédica — 90 cápsulas", category: "Performance", price: "R$ 54,90" },
+  { name: "Vitamina C Adaptogen — 60 cápsulas", category: "Vitaminas e bem-estar", price: "R$ 54,90" }
+];
 
 const grid = document.querySelector("#products");
 const search = document.querySelector("#search");
@@ -14,14 +31,14 @@ function render() {
   );
 
   grid.innerHTML = filtered.map(p => {
-    const msg = `Olá! Tenho interesse em *${p.name}*. O preço de referência no catálogo é ${p.price}. Gostaria de consultar disponibilidade e valor final.`;
+    const msg = `Olá! Tenho interesse em *${p.name}*. Vi o preço sugerido de ${p.price} no catálogo da Nivor. Vocês podem confirmar a disponibilidade e o valor final?`;
     const link = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
     return `<article class="card">
       <span class="tag">${p.category}</span>
       <h3>${p.name}</h3>
-      <p>Preço de referência. Consulte disponibilidade e valor final antes de fechar o pedido.</p>
+      <p>Preço sugerido. Consulte disponibilidade e confirme o valor final antes de fechar o pedido.</p>
       <div class="price">${p.price}</div>
-      <div class="ref">preço de referência</div>
+      <div class="ref">preço sugerido</div>
       <a class="order" href="${link}" target="_blank" rel="noopener">Consultar no WhatsApp</a>
     </article>`;
   }).join("") || `<p>Nenhum produto encontrado.</p>`;
